@@ -61,5 +61,5 @@ gdt_descriptor:
     dw gdt_end - gdt_start-1
     dd gdt_start
 
-times 510-($ - $$) db 0
-dw 0xAA55
+times 510-($ - $$) db 0 ; Pad with zeros to 510, last 2 bytes are for the magic number below
+dw 0xAA55 ; Boot magic number
